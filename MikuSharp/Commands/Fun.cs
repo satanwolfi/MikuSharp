@@ -36,7 +36,7 @@ namespace MikuSharp.Commands
             await ctx.RespondWithFileAsync(embed: ImgURL.Embed, fileData: ImgURL.Data, fileName: $"image.{ImgURL.Filetype}");
         }
 
-        [Command("cucknorris")]
+        [Command("chucknorris")]
         [Description("Random Chuck Norris joke")]
         public async Task ChuckNorris(CommandContext ctx)
         {
@@ -94,7 +94,7 @@ namespace MikuSharp.Commands
         }
 
         [Command("duck")]
-        [Description("Radnom duck image")]
+        [Description("Random duck image")]
         public async Task Duck(CommandContext ctx)
         {
             var c = new HttpClient();
@@ -121,15 +121,7 @@ namespace MikuSharp.Commands
             //soon
         }
 
-        [Command("lion")]
-        [Description("Get a random lion image")]
-        public async Task Lion(CommandContext ctx)
-        {
-            var c = new HttpClient();
-            var ImgLink = JsonConvert.DeserializeObject<AnIdiotsGuide>(await c.GetStringAsync("https://animals.anidiots.guide/lion"));
-            Stream img = new MemoryStream(await c.GetByteArrayAsync(Other.resizeLink(ImgLink.link)));
-            await ctx.RespondWithFileAsync(fileName: "image." + MimeGuesser.GuessExtension(img), fileData: img);
-        }
+       
 
         [Command("lizard")]
         [Description("Get a random lizard image")]
@@ -141,25 +133,8 @@ namespace MikuSharp.Commands
             await ctx.RespondWithFileAsync(fileName: "image." + MimeGuesser.GuessExtension(img), fileData: img);
         }
 
-        [Command("panda")]
-        [Description("Random panda image")]
-        public async Task Panda(CommandContext ctx)
-        {
-            var c = new HttpClient();
-            var ImgLink = JsonConvert.DeserializeObject<AnIdiotsGuide>(await c.GetStringAsync("https://animals.anidiots.guide/panda"));
-            Stream img = new MemoryStream(await c.GetByteArrayAsync(Other.resizeLink(ImgLink.link)));
-            await ctx.RespondWithFileAsync(fileName: "image." + MimeGuesser.GuessExtension(img), fileData: img);
-        }
+       
 
-        [Command("penguin")]
-        [Description("Radnom penguin image")]
-        public async Task Penguin(CommandContext ctx)
-        {
-            var c = new HttpClient();
-            var ImgLink = JsonConvert.DeserializeObject<AnIdiotsGuide>(await c.GetStringAsync("https://animals.anidiots.guide/penguin"));
-            Stream img = new MemoryStream(await c.GetByteArrayAsync(Other.resizeLink(ImgLink.link)));
-            await ctx.RespondWithFileAsync(fileName: "image." + MimeGuesser.GuessExtension(img), fileData: img);
-        }
 
         [Command("pirate")]
         [Description("Convert some test into Pirate speech")]
@@ -168,15 +143,7 @@ namespace MikuSharp.Commands
             //soon
         }
 
-        [Command("redpanda")]
-        [Description("Random red panda image")]
-        public async Task RedPanda(CommandContext ctx)
-        {
-            var c = new HttpClient();
-            var ImgLink = JsonConvert.DeserializeObject<AnIdiotsGuide>(await c.GetStringAsync("https://animals.anidiots.guide/red_panda"));
-            Stream img = new MemoryStream(await c.GetByteArrayAsync(Other.resizeLink(ImgLink.link)));
-            await ctx.RespondWithFileAsync(fileName: "image." + MimeGuesser.GuessExtension(img), fileData: img);
-        }
+       
 
         [Command("rps")]
         [Description("Play rock paper scissors!")]
@@ -186,15 +153,7 @@ namespace MikuSharp.Commands
             await ctx.RespondAsync(rock[new Random().Next(0, rock.Length)]);
         }
 
-        [Command("tiger")]
-        [Description("Radnom tiger image")]
-        public async Task Tiger(CommandContext ctx)
-        {
-            var c = new HttpClient();
-            var ImgLink = JsonConvert.DeserializeObject<AnIdiotsGuide>(await c.GetStringAsync("https://animals.anidiots.guide/tiger"));
-            Stream img = new MemoryStream(await c.GetByteArrayAsync(Other.resizeLink(ImgLink.link)));
-            await ctx.RespondWithFileAsync(fileName: "image." + MimeGuesser.GuessExtension(img), fileData: img);
-        }
+      
 
         [Command("tiny")]
         [Description("Make some text tiny")]
